@@ -4,17 +4,17 @@ using TP9_Login_Benezra.Models;
 
 namespace TP9_Login_Benezra.Controllers;
 
-public class HomeController : Controller
+public class Account : Controller
 {
-    private readonly ILogger<HomeController> _logger;
+    private readonly ILogger<Account> _logger;
 
-    public HomeController(ILogger<HomeController> logger)
+    public Account(ILogger<Account> logger)
     {
         _logger = logger;
     }
 
     public IActionResult Index()
     {
-        return View("Registro");
+        return View();
     }
 }
