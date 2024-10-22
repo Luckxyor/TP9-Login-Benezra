@@ -1,4 +1,4 @@
-namespace TP9_Login_Benezra_Sasson.Models;
+namespace TP9_Login_Benezra.Models;
 
 public class ErrorViewModel
 {

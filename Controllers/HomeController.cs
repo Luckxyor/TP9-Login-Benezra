@@ -1,8 +1,8 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using TP9_Login_Benezra_Sasson.Models;
+using TP9_Login_Benezra.Models;
 
-namespace TP9_Login_Benezra_Sasson.Controllers;
+namespace TP9_Login_Benezra.Controllers;
 
 public class HomeController : Controller
 {
