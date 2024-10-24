@@ -71,12 +71,13 @@ a {
 .container {
   background: #fff;
   border-radius: 10px;
+  border: 1px solid black;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0, 10px 10px rgba(0, 0, 0, 0.22);
   position: relative;
   overflow: hidden;
-  width: 768px;
+  width: 960px;
   max-width: 100%;
-  min-height: 480px;
+  min-height: 600px;
 }
 
 .form-container form {
@@ -91,7 +92,7 @@ a {
 }
 
 .social-container {
-  margin: 20px 0;
+  margin: 30px 0;
 }
 
 .social-container a {
@@ -107,16 +108,16 @@ a {
 
 .form-container input {
   background: #eee;
-  border: none;
+  border: 1px solid #000;
   padding: 12px 15px;
-  margin: 8px 0;
+  margin: 30px 0;
   width: 100%;
 }
 
 button {
   border-radius: 20px;
-  border: 1px solid #ff4b2b;
-  background: #ff4b2b;
+  border: 1px solid #CA4117;
+  background: #CA4117;
   color: #fff;
   font-size: 12px;
   font-weight: bold;
@@ -126,10 +127,6 @@ button {
   transition: transform 80ms ease-in;
 }
 
-#lila {
-  background: #be4bdb;
-  border: 1px solid #be4bdb;
-}
 
 button:active {
   transform: scale(0.95);
@@ -175,8 +172,8 @@ button.ghost {
 }
 
 .overlay {
-  background: #ff416c;
-  background: linear-gradient(to right, #ff4b2b, #ff416c) no-repeat 0 0 / cover;
+  background: #F79A1A;
+  background: linear-gradient(to right, #E64E1F, #F79A1A) no-repeat 0 0 / cover;
   color: #fff;
   position: relative;
   left: -100%;
@@ -207,7 +204,8 @@ button.ghost {
 }
 
 .overlay-left {
-  background: #be4bdb;
+  background: #F79A1A;
+  background: linear-gradient(to right, #E64E1F, #F79A1A) no-repeat 0 0 / cover;
   transition: translateX(-20%);
 }
 
