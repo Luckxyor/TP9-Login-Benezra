@@ -2,16 +2,36 @@
     const contra = document.getElementById('Contraseña');
     const caracteresEspeciales = [ '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '=', '+', '{', '}', '[', ']', '|', ':', ';', '"', '<', '>', ',', '.', '?', '/', '`', '~'];
     const longitud=contra.value.length>=8;
-    const especial=contra.value!==(contra.value.toLowerCase());
+    const mayuscula=contra.value!==(contra.value.toLowerCase());
     const contieneEspecial = contieneLetraEspecial(contra.value, caracteresEspeciales);
-    const texto = document.getElementById('textoMostrado');
-    texto.textContent = contra.value;
+    
+    const largo = document.getElementById('largo');
+    const mayus = document.getElementById('mayus');
+    const especial = document.getElementById('especial');
 
-    if(longitud && especial && contieneEspecial){
-        texto.style.color="green";
+    if(longitud){
+        largo.textContent='✔ Más de 8 caracteres'
+        largo.style.color='green';
     }
     else{
-        texto.style.color="red";
+        largo.textContent='✖ Más de 8 caracteres'
+        largo.style.color='red';
+    }
+    if(mayuscula){
+        mayus.textContent='✔ Mínimo 1 letra mayúscula'
+        mayus.style.color='green';
+    }
+    else{
+        mayus.textContent='✖ Mínimo 1 letra mayúscula'
+        mayus.style.color='red';
+    }
+    if(contieneEspecial){
+        especial.textContent='✔ Mínimo 1 caracter especial'
+        especial.style.color='green';
+    }
+    else{
+        especial.textContent='✖ Mínimo 1 caracter especial'
+        especial.style.color='red';
     }
 }
 
@@ -23,15 +43,3 @@ function contieneLetraEspecial(contraseña, caracteresEspeciales){
     }
     return false;
 }
-
-const signUpButton = document.getElementById('signUp');
-const signInButton = document.getElementById('signIn');
-const container = document.getElementById('container');
-
-signUpButton.addEventListener('click', () =>
-    container.classList.add('right-panel-active')
-);
-
-signInButton.addEventListener('click', () =>
-    container.classList.remove('right-panel-active')
-);

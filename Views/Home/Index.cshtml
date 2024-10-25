@@ -1,63 +1,28 @@
 ﻿@{
     ViewData["Title"] = "Login CSS";
 }
-<div class="container" id="container">
-    <div class="form-container sign-up-container">
-    <form action="#">
-        <h1>Crea tu Cuenta</h1>
-        <div class="social-container">
-        <a href="#" class="social>">
-            <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="#" class="social>">
-            <i class="fab fa-google" id="red"></i>
-        </a>
-        <a href="#" class="social>">
-            <i class="fab fa-linkedin-in"></i>
-        </a>
+
+<div class="ContenedorForm">
+    <h2>Registrarse</h2>
+    <form id="FormRegistro">
+        <div class="parteForm">
+            <label for="UserName">Nombre de Usuario</label>
+            <input type="text" id="UserName" placeholder="Nombre de Usuario" required>
         </div>
-        <span>o usa tu email como registro</span>
-        <input type="text" placeholder="Name" />
-        <input type="email" placeholder="Email" />
-        <input type="password" placeholder="Password" />
-        <button>Registrar</button>
+        <div class="parteForm">
+            <label for="Email">Email</label>
+            <input type="email" id="Email" placeholder="Email" required>
+        </div>
+        <div class="parteForm">
+            <label for="Contraseña">Contraseña</label>
+            <input type="password" id="Contraseña" placeholder="Contraseña" required oninput="ContraseñaBien()">
+            <p id="passwordMessage"></p>
+        </div>
+        <div class="parteForm">
+            <p id="largo" class="Validacion">✖ Más de 8 caracteres</p>
+            <p id="mayus" class="Validacion">✖ Mínimo 1 letra mayúscula</p>
+            <p id="especial" class="Validacion">✖ Mínimo 1 caracter especial</p>
+        </div>
+        <button type="submit" class="btn-submit">Registrarse</button>
     </form>
-    </div>
-    <div class="form-container sign-in-container">
-    <form action="#">
-        <h1>Iniciar Sesión</h1>
-        <div class="social-container">
-        <a href="#" class="social">
-            <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="#" class="social>">
-            <i class="fab fa-google" id="red"></i>
-        </a>
-        <a href="#" class="social">
-            <i class="fab fa-linkedin-in"></i>
-        </a>
-        </div>
-        <span>o usa tu email</span>
-        <input type="email" placeholder="Email" />
-        <input type="password" placeholder="Password" />
-        <a href="#">Olvidaste tu contraseña?</a>
-        <button>Iniciar sesión</button>
-    </form>
-    </div>
-    <div class="overlay-container">
-    <div class="overlay">
-        <div class="overlay-panel overlay-left">
-        <h1>¡Bienvenido!</h1>
-        <p>
-            Inicia sesión con tu cuenta
-        </p>
-        <button class="ghost" id="signIn">Inicia sesión</button>
-        </div>
-        <div class="overlay-panel overlay-right">
-        <h1>Hola!!!</h1>
-        <p>Crear tu cuenta</p>
-        <button class="ghost" id="signUp">Registrar</button>
-        </div>
-    </div>
-    </div>
 </div>
