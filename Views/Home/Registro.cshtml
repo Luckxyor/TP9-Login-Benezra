@@ -2,3 +2,28 @@
     ViewData["Title"] = "Registro";
 }
 
+<div class="ContenedorForm">
+    <h2>Registrarse</h2>
+    <form id="FormRegistro" action='@Url.Action("AgregarUsuario", "Home")' method="post" onsubmit="return validarFormulario()">
+        <div class="parteForm">
+            <label for="UserName">Nombre de Usuario</label>
+            <input type="text" name="UserName" placeholder="Nombre de Usuario" required>
+        </div>
+        <div class="parteForm">
+            <label for="Email">Email</label>
+            <input type="email" name="Email" placeholder="Email" required>
+        </div>
+        <div class="parteForm">
+            <label for="Password">Contraseña</label>
+            <input type="password" id="Password" name="Contraseña" placeholder="Contraseña" required oninput="ContraseñaBien()">
+            <p id="passwordMessage"></p>
+        </div>
+        <div class="parteForm">
+            <p id="largo" class="Validacion">✖ Más de 8 caracteres</p>
+            <p id="mayus" class="Validacion">✖ Mínimo 1 letra mayúscula</p>
+            <p id="especial" class="Validacion">✖ Mínimo 1 caracter especial</p>
+        </div>
+        <p class="mensaje-error parteForm" id="errorRequisitos">Tienes que cumplir con los requisitos de las contraseñas</p>
+        <button type="submit" class="btn-submit">Registrarse</button>
+    </form>
+</div>
