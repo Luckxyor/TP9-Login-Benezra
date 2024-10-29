@@ -7,16 +7,15 @@
     <form id="FormRegistro" action='@Url.Action("AgregarUsuario", "Home")' method="post" onsubmit="return validarFormulario()">
         <div class="parteForm">
             <label for="UserName">Nombre de Usuario</label>
-            <input type="text" name="UserName" placeholder="Nombre de Usuario" required>
+            <input type="text" name="UserName" placeholder="Roberto" required>
         </div>
         <div class="parteForm">
             <label for="Email">Email</label>
-            <input type="email" name="Email" placeholder="Email" required>
+            <input type="email" name="Email" placeholder="ejemplo123@email.com" required>
         </div>
         <div class="parteForm">
             <label for="Password">Contraseña</label>
-            <input type="password" id="Password" name="Contraseña" placeholder="Contraseña" required oninput="ContraseñaBien()">
-            <p id="passwordMessage"></p>
+            <input type="password" id="Password" name="Contraseña" placeholder="Hola_123" required oninput="ContraseñaBien()">
         </div>
         <div class="parteForm">
             <p id="largo" class="Validacion">✖ Más de 8 caracteres</p>

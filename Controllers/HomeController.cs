@@ -15,12 +15,26 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        return View("Registro");
+        return View();
+    }
+
+    public IActionResult Registro(){
+        return View();
+    }
+
+    public IActionResult Login(){
+        return View();
     }
 
     [HttpPost]
     public IActionResult AgregarUsuario(string UserName, string Email, string Contraseña){
         BD.AgregarUsuario(UserName,Email,Contraseña);
+        return View("Index");
+    }
+
+    [HttpPost]
+    public IActionResult InicioSesion(string UserOEmail, string Contraseña){
+        BD.InicioSesion(UserOEmail,Contraseña);
         return View("Index");
     }
 }

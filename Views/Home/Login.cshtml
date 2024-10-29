@@ -1,0 +1,19 @@
+@{
+    ViewData["Title"] = "Iniciar Sesión";
+}
+
+<div class="ContenedorForm">
+    <h2>Iniciar Sesión</h2>
+    <form id="FormRegistro" action='@Url.Action("InicioSesion", "Home")' method="post">
+        <div class="parteForm">
+            <label for="UserName">Nombre de Usuario o Email</label>
+            <input type="text" name="UserOEmail" placeholder="Roberto o ejemplo123@email.com" required>
+        </div>
+        <div class="parteForm">
+            <label for="Password">Contraseña</label>
+            <input type="password" id="Password" name="Contraseña" placeholder="Hola_123" required oninput="ContraseñaBien()">
+        </div>
+        
+        <button type="submit" class="btn-submit">Inicio Sesion</button>
+    </form>
+</div>

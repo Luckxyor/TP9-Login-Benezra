@@ -4,11 +4,11 @@ using TP9_Login_Benezra.Models;
 
 namespace TP9_Login_Benezra.Controllers;
 
-public class Account : Controller
+public class AccountController : Controller
 {
-    private readonly ILogger<Account> _logger;
+    private readonly ILogger<AccountController> _logger;
 
-    public Account(ILogger<Account> logger)
+    public AccountController(ILogger<AccountController> logger)
     {
         _logger = logger;
     }
