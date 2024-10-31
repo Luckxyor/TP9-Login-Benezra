@@ -6,18 +6,32 @@ namespace TP9_Login_Benezra.Models;
 static class BD{
     private static string _connectionString="Server=localhost; DataBase=TPLogin; Trusted_Connection=True;";
 
-    public static void AgregarUsuario(string UserName, string Email, String Contraseña){
+    public static void AgregarUsuario(string UserName, string Email, string Contraseña){
         string sqlInsert="Insert into Usuario (UserName, Email, Contraseña) values (@pUserName, @pEmail, @pContraseña)";
         using (SqlConnection db=new SqlConnection(_connectionString)){
             db.Execute(sqlInsert, new{pUserName=UserName, pEmail=Email, pContraseña=Contraseña});
         }
     }
 
-    public static bool InicioSesion(string UserOEmail, String Contraseña){
-        string sqlInsert="RETURNS BIT; if exist(Select * from Usuario where (UserName=@pUserOEmail or Email=@ppUserOEmail) and Contraseña=@pContraseña) begin return 1; else return 0; END";
+    public static bool InicioSesion(string UserOEmail, string Contraseña){
+        Usuario usuario=null;
+        bool SiExiste;
+        string sqlInsert="EXEC VerificarUsuario @pUserOEmail, @pContraseña;";
         using (SqlConnection db=new SqlConnection(_connectionString)){
-            bool Existe=db.Execute(sqlInsert, new{pUserOEmail=UserOEmail, pContraseña=Contraseña});
+            usuario=db.QueryFirstOrDefault<Usuario>(sqlInsert, new{pUserOEmail=UserOEmail, pContraseña=Contraseña});
         }
-        return Existe;
+        if (usuario==null){
+            return SiExiste=false;
+        }
+        else{
+            return SiExiste=true;
+        }
+    }
+
+    public static void ActualizarContraseña(string UserOEmail, string Contraseña){
+        string sqlInsert=";
+        using (SqlConnection db=new SqlConnection(_connectionString)){
+            db.Execute(sqlInsert, new{pUserName=UserName, pEmail=Email, pContraseña=Contraseña});
+        }
     }
 }

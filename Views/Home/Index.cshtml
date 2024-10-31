@@ -2,6 +2,8 @@
     ViewData["Title"] = "Login";
 }
 
-<h1>Que quieres hacer:</h1>
-<button class="btn-submit" onclick='@Url.Action("Registro", "Home")'>Registrarse</button>
-<button class="btn-submit" onclick='@Url.Action("Login", "Home")'>Iniciar Sesión</button>
+<div class="Home">
+    <h1>Que quieres hacer:</h1>
+    <button class="btn-submit" onclick="location.href='@Url.Action("Registro", "Home")'">Registrarse</button>
+    <button class="btn-submit" onclick="location.href='@Url.Action("Login", "Home")'">Iniciar Sesión</button>
+</div>

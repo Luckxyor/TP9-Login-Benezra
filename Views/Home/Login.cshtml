@@ -4,16 +4,19 @@
 
 <div class="ContenedorForm">
     <h2>Iniciar Sesión</h2>
-    <form id="FormRegistro" action='@Url.Action("InicioSesion", "Home")' method="post">
+    <form id="FormRegistro" action='@Url.Action("InicioSesion", "Account")' method="post">
         <div class="parteForm">
             <label for="UserName">Nombre de Usuario o Email</label>
             <input type="text" name="UserOEmail" placeholder="Roberto o ejemplo123@email.com" required>
         </div>
         <div class="parteForm">
             <label for="Password">Contraseña</label>
-            <input type="password" id="Password" name="Contraseña" placeholder="Hola_123" required oninput="ContraseñaBien()">
+            <input type="password" id="Password" name="Contraseña" placeholder="Hola_123" required>
         </div>
-        
+        <a class="parteForm" href='@Url.Action("OlvideContraseña","Home")'></a>
+        @if(ViewBag.mensaje!=null){
+            <p style="color:red;" class="parteForm">@ViewBag.mensaje</p>
+        }
         <button type="submit" class="btn-submit">Inicio Sesion</button>
     </form>
 </div>

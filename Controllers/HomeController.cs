@@ -26,15 +26,7 @@ public class HomeController : Controller
         return View();
     }
 
-    [HttpPost]
-    public IActionResult AgregarUsuario(string UserName, string Email, string Contraseña){
-        BD.AgregarUsuario(UserName,Email,Contraseña);
-        return View("Index");
-    }
-
-    [HttpPost]
-    public IActionResult InicioSesion(string UserOEmail, string Contraseña){
-        BD.InicioSesion(UserOEmail,Contraseña);
-        return View("Index");
+    public IActionResult OlvideContraseña(){
+        return View();
     }
 }
