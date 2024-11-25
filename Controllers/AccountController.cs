@@ -34,5 +34,6 @@ public class AccountController : Controller
     [HttpPost]
     public IActionResult ActualizarContra(string UserOEmail, string Contraseña){
         BD.ActualizarContraseña(UserOEmail, Contraseña);
+        return View();
     }
 }

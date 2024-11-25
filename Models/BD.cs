@@ -29,9 +29,9 @@ static class BD{
     }
 
     public static void ActualizarContraseña(string UserOEmail, string Contraseña){
-        string sqlInsert=";
+        string sqlInsert="";
         using (SqlConnection db=new SqlConnection(_connectionString)){
-            db.Execute(sqlInsert, new{pUserName=UserName, pEmail=Email, pContraseña=Contraseña});
+            db.Execute(sqlInsert, new{pUserName=UserOEmail, pEmail=UserOEmail, pContraseña=Contraseña});
         }
     }
 }
